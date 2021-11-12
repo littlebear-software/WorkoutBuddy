@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, SafeAreaView, StyleSheet} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Provider} from 'react-redux';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Provider } from 'react-redux';
 
 import {
   WorkoutsScreen,
@@ -10,9 +10,9 @@ import {
   CalendarScreen,
   IntervalScreen,
 } from './src/screens';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import store from './src/redux/store';
-import {CalendarIcon, IntervalIcon, StrengthIcon} from './src/icons';
+import { CalendarIcon, IntervalIcon, StrengthIcon } from './src/icons';
 
 const Stack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -24,7 +24,7 @@ const StackNavigator = () => {
       <Stack.Screen
         name="Workout"
         component={WorkoutScreen}
-        options={({route}) => ({title: route.params.name})}
+        options={({ route }) => ({ title: route.params.name })}
       />
     </Stack.Navigator>
   );
@@ -42,7 +42,7 @@ const App = () => {
                 component={StackNavigator}
                 options={{
                   headerShown: false,
-                  tabBarIcon: ({color, size}) => (
+                  tabBarIcon: ({ color, size }) => (
                     <StrengthIcon size={size} color={color} />
                   ),
                 }}
@@ -51,7 +51,7 @@ const App = () => {
                 name="Calendar"
                 component={CalendarScreen}
                 options={{
-                  tabBarIcon: ({color, size}) => (
+                  tabBarIcon: ({ color, size }) => (
                     <CalendarIcon color={color} size={size} />
                   ),
                 }}
@@ -60,7 +60,7 @@ const App = () => {
                 name="Intervals"
                 component={IntervalScreen}
                 options={{
-                  tabBarIcon: ({color, size}) => (
+                  tabBarIcon: ({ color, size }) => (
                     <IntervalIcon size={size} color={color} />
                   ),
                 }}

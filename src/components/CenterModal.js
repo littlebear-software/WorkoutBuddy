@@ -1,8 +1,8 @@
 import React from 'react';
-import {Modal, StyleSheet} from 'react-native';
-import ModalContainer from './modals/ModalContainer';
+import { Modal, StyleSheet } from 'react-native';
+import ModalContainer from './ModalContainer';
 
-const CenterModal = ({visible, onClose, children}) => {
+const CenterModal = ({ visible, onClose, children }) => {
   return (
     <Modal
       animationType="slide"

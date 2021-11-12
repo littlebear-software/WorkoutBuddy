@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import AddButton from '../components/buttons/AddButton';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import ExerciseList from '../components/ExerciseList';
 import CenterModal from '../components/CenterModal';
 import ExerciseForm from '../components/forms/ExerciseForm';
 
-const WorkoutScreen = ({dispatch, state}) => {
+const WorkoutScreen = ({ dispatch, state }) => {
   const [modalVisible, onChangeModalVisible] = useState(false);
   const workout = state.selected_workout;
 
@@ -24,7 +24,7 @@ const WorkoutScreen = ({dispatch, state}) => {
           }}
         />
       </CenterModal>
-      <ExerciseList />
+      <ExerciseList workout={workout} />
       <View style={styles.button_container}>
         <AddButton
           onPress={() => {

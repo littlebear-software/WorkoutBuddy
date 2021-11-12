@@ -1,12 +1,12 @@
 import React from 'react';
-import {Pressable, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { Pressable, Text, StyleSheet } from 'react-native';
 import RightArrow from '../icons/RightArrow';
-import {useNavigation} from '@react-navigation/native';
-import {connect} from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+import { connect } from 'react-redux';
 import WorkoutActions from '../redux/actions/workouts';
 import Swipeout from 'react-native-swipeout';
 
-const WorkoutCard = ({workout, dispatch}) => {
+const WorkoutCard = ({ workout, dispatch }) => {
   const navigation = useNavigation();
 
   const buttons = [
@@ -29,7 +29,7 @@ const WorkoutCard = ({workout, dispatch}) => {
         style={styles.container}
         onPress={() => {
           dispatch(WorkoutActions.selectWorkout(workout));
-          navigation.navigate('Workout', {name: workout.name});
+          navigation.navigate('Workout', { name: workout.name });
         }}>
         <Text style={styles.title}>{workout.name}</Text>
         <RightArrow />
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     shadowColor: 'grey',
     shadowOpacity: 1,
-    shadowOffset: {width: 0, height: 5},
+    shadowOffset: { width: 0, height: 5 },
     alignSelf: 'center',
     marginVertical: 15,
   },

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, StyleSheet} from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import WorkoutList from '../components/WorkoutList';
 import AddButton from '../components/buttons/AddButton';
 import WorkoutForm from '../components/forms/WorkoutForm';

@@ -1,3 +1,3 @@
 import WorkoutActions from './workouts';
 
-export {WorkoutActions};
+export { WorkoutActions };

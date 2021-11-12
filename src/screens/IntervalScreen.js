@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, SafeAreaView, StyleSheet} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const IntervalScreen = () => {
-  return (
-    <View>
-      <SafeAreaView />
-    </View>
-  );
+  return <View style={styles.screen} />;
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+});
 
 export default IntervalScreen;

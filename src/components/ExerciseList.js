@@ -1,16 +1,41 @@
-import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
 import ExerciseCard from './ExerciseCard';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import BottomModal from './BottomModal';
+import SetList from './SetList';
+import WorkoutActions from '../redux/actions/workouts';
 
-const ExerciseList = ({state}) => {
+const ExerciseList = ({ state, dispatch, workout }) => {
+  const [visible, onChangeVisible] = useState(false);
+
   return (
-    <FlatList
-      contentContainerStyle={styles.list}
-      style={styles.container}
-      data={state.selected_workout.exercises}
-      renderItem={({item}) => <ExerciseCard key={item.id} exercise={item} />}
-    />
+    <View style={styles.container}>
+      <BottomModal
+        height="80%"
+        visible={visible}
+        onClose={() => {
+          onChangeVisible(false);
+        }}>
+        <SetList workout={workout.id} exercise={state.selected_exercise} />
+      </BottomModal>
+      <FlatList
+        contentContainerStyle={styles.list}
+        style={styles.container}
+        data={state.selected_workout.exercises}
+        renderItem={({ item }) => (
+          <ExerciseCard
+            key={item.id}
+            workout={workout.id}
+            exercise={item}
+            onPress={() => {
+              dispatch(WorkoutActions.selectExercise(item));
+              onChangeVisible(true);
+            }}
+          />
+        )}
+      />
+    </View>
   );
 };
 

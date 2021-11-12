@@ -24,7 +24,19 @@ const WorkoutActions = {
   addExercise: (workout, exercise) => {
     return {
       type: ActionTypes.ADD_EXERCISE,
-      payload: {workout: workout, exercise: new Exercise(exercise)},
+      payload: { workout: workout, exercise: new Exercise(exercise) },
+    };
+  },
+  removeExercise: (workout, exercise) => {
+    return {
+      type: ActionTypes.REMOVE_EXERCISE,
+      payload: { workout: workout, exercise: exercise },
+    };
+  },
+  selectExercise: exercise => {
+    return {
+      type: ActionTypes.SELECT_EXERCISE,
+      payload: exercise,
     };
   },
 };

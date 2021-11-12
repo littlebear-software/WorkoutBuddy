@@ -1,7 +1,7 @@
-import {createStore, combineReducers} from 'redux';
+import { createStore, combineReducers } from 'redux';
 import WorkoutReducer from './reducers/workouts';
 
-const reducer = combineReducers({workouts: WorkoutReducer});
+const reducer = combineReducers({ workouts: WorkoutReducer });
 
 const store = createStore(reducer);
 

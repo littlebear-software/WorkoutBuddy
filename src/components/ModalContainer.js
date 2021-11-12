@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, KeyboardAvoidingView, Platform} from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 
-const ModalContainer = ({children}) => {
+const ModalContainer = ({ children }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
